@@ -1,0 +1,150 @@
+@keyframes scale-up-top {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(90deg, #2967fc, #fdd72e);
+}
+.header-page {
+  padding-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+    width: 20%;
+    border-radius: 2rem;
+
+    &:hover {
+      transition: 0.2s;
+      opacity: 0.5;
+    }
+  }
+}
+
+.container-page {
+  padding: 2rem 3rem;
+
+  input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    border: 5px solid #2967fc;
+  }
+
+  .pokemon-container {
+    width: 100%;
+    padding: 2rem;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 2rem;
+    border-radius: 3rem;
+  }
+
+  .poke-box {
+    background-color: #fcdd57;
+    border: 4px solid #2967fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    gap: 5px;
+
+    .header-card {
+      width: 100%;
+      display: inline-block;
+
+      span {
+        font-weight: bold;
+        float: left;
+      }
+
+      h1 {
+        margin-right: 26.34px;
+
+        text-align: center;
+      }
+    }
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem 0.5rem 0px 0px;
+    }
+
+    p {
+      font-weight: bold;
+      color: #53227f;
+      font-family: "Flexo-Bold", arial, sans-serif;
+    }
+
+    .pokemon-types {
+      display: flex;
+      gap: 0.5rem;
+
+      span {
+        font-weight: bold;
+        padding: 2px;
+        border-radius: 5px;
+      }
+    }
+
+    &:hover {
+      transition: 0.5s;
+      animation: scale-up-top 0.2s linear;
+    }
+  }
+  .loadMore-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      padding: 1rem 2rem;
+      background-color: #2967fc;
+      color: white;
+      border-radius: 1rem;
+      font-size: 2rem;
+
+      &:hover {
+        cursor: pointer;
+        transition: 0.1s;
+        background-color: #1847b4;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .header-page {
+    img {
+      width: 50%;
+    }
+  }
+  .container-page {
+    padding: 2rem 1rem;
+    input {
+      padding: 1rem;
+    }
+
+    .pokemon-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 250px);
+    }
+  }
+}
